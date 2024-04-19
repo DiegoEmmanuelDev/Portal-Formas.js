@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangulo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="index.html">
+        <header>
+            <h1 class="titulo">Portal das Formas</h1>
+
+            <div class="pai">
+                <div class="loader">
+                    <svg viewBox="0 0 80 80">
+                        <circle id="test" cx="40" cy="40" r="32"></circle>
+                    </svg>
+                </div>
+
+                <div class="loader triangle">
+                    <svg viewBox="0 0 86 80">
+                        <polygon points="43 8 79 72 7 72"></polygon>
+                    </svg>
+                </div>
+
+                <div class="loader">
+                    <svg viewBox="0 0 80 80">
+                        <rect x="8" y="8" width="64" height="64"></rect>
+                    </svg>
+                </div>
+            </div>
+
+        </header>
+    </a>
+
+    <div class="triangulo1">
+        <h2>TRIANGULO</h2>
+        <img
+            src="img/triangulo-de-forma-geometrica-de-cor-neon-verde-sobre-um-fundo-preto-fechado_1004172-548 (1).avif">
+    </div>
+
+    <div class="triangulo">
+    <h2>Calculadora de Área de Triângulo</h2>
+    <div class="labelcor"></div>
+    <label for="ladoA">Lado A:</label>
+    <input type="number" id="ladoA">
+    <br>
+    <label for="ladoB">Lado B:</label>
+    <input type="number" id="ladoB">
+    <br>
+    <label for="ladoC">Lado C:</label>
+    <input type="number" id="ladoC">
+    <br>
+    <button onclick="calcularArea()"> Calcular Área</button>
+    <p id="resultado"></p>
+    </div>
+
+</div>
+    <script>
+        function calcularArea() {
+            var a = parseFloat(document.getElementById('ladoA').value);
+            var b = parseFloat(document.getElementById('ladoB').value);
+            var c = parseFloat(document.getElementById('ladoC').value);
+
+            var semiPerimetro = (a + b + c) / 2;
+            var area = Math.sqrt(semiPerimetro * (semiPerimetro - a) * (semiPerimetro - b) * (semiPerimetro - c));
+
+            document.getElementById('resultado').innerText = "Área do triângulo: " + area.toFixed(2);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="index.html">
+     <header>
+        <h1 class="titulo">Portal das Formas</h1>
+
+    <div class="pai">
+                <div class="loader">
+                    <svg viewBox="0 0 80 80">
+                        <circle id="test" cx="40" cy="40" r="32"></circle>
+                    </svg>
+                </div>
+                
+                <div class="loader triangle">
+                    <svg viewBox="0 0 86 80">
+                        <polygon points="43 8 79 72 7 72"></polygon>
+                    </svg>
+                </div>
+                
+                <div class="loader">
+                    <svg viewBox="0 0 80 80">
+                        <rect x="8" y="8" width="64" height="64"></rect>
+                    </svg>
+                </div>
+    </div>
+
+    </header>
+</a>
+     <div class="tudo">
+        <div class="quadrado1">
+        <h2>QUADRADO</h2>
+        <img src="img/163e3dead3dafa5ddfa4c0cfc6809fdd.jpg" alt="">
+        </div> 
+
+        <script>
+            function calcularArea() {
+                var lado = parseFloat(document.getElementById("lado").value);
+    
+                if (!isNaN(lado)) {
+                    var area = lado * lado;
+                    document.getElementById("resultado").innerHTML = "A área do quadrado é: " + area.toFixed(2) + " unidades quadradas.";
+                } else {
+                    document.getElementById("resultado").innerHTML = "Insira um valor numérico válido para o lado.";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Calculadora de Área de Quadrado</h1>
+    
+        <h2>Lado</h2>
+        <label for="lado"></label>
+        <input type="number" id="lado" placeholder="Digite o tamanho do lado"><br><br>
+        
+         <div class="colorarea">
+
+        <button onclick="calcularArea()">Calcular Área</button>
+        
+        <p id="resultado"></p>
+    
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cubo</title>
+</head>
+<body>
+    <a href="index.html">
+        <header>
+            <h1 class="titulo">Portal das Formas</h1>
+
+            <div class="pai">
+                <div class="loader">
+                    <svg viewBox="0 0 80 80">
+                        <circle id="test" cx="40" cy="40" r="32"></circle>
+                    </svg>
+                </div>
+
+                <div class="loader triangle">
+                    <svg viewBox="0 0 86 80">
+                        <polygon points="43 8 79 72 7 72"></polygon>
+                    </svg>
+                </div>
+
+                <div class="loader">
+                    <svg viewBox="0 0 80 80">
+                        <rect x="8" y="8" width="64" height="64"></rect>
+                    </svg>
+                </div>
+            </div>
+
+        </header>
+    </a>
+
+    <div class="cubo1">
+        <h2>CUBO</h2>
+        <img src="img/cubo-de-neon_72104-2352.avif" alt="">
+    </div>
+
+    <h2>Calculadora de Área do Cubo</h2>
+
+    <form id="cuboForm">
+      <label for="lado">Digite o comprimento do lado do cubo:</label>
+      <input type="number" id="lado" name="lado" required>
+      <button type="submit">Calcular</button>
+    </form>
+    
+    <div id="resultado"></div>
+    
+    <script>
+      document.getElementById("cuboForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var lado = parseFloat(document.getElementById("lado").value);
+        var area = 6 * lado * lado; // Área do cubo: 6 * lado^2
+        document.getElementById("resultado").innerHTML = "A área do cubo é: " + area.toFixed(2);
+      });
+    </script>
+
+</body>
+</html>
